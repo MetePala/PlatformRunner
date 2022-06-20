@@ -7,7 +7,7 @@ public class RotatingPlatformCompanent : MonoBehaviour
 
     private void OnCollisionStay(Collision col)
     {
-        if (col.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Player") || col.gameObject.CompareTag("Girl"))
         {
             col.gameObject.transform.SetParent(gameObject.transform);
         }
@@ -15,7 +15,7 @@ public class RotatingPlatformCompanent : MonoBehaviour
 
     private void OnCollisionExit(Collision col)
     {
-        if (col.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Player") || col.gameObject.CompareTag("Girl"))
         {
             col.transform.eulerAngles = new Vector3(0, 0, 0);
             col.collider.transform.SetParent(null);

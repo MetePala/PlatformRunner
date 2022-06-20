@@ -6,6 +6,7 @@ public class InputManager : MonoBehaviour
 {
     [SerializeField] float _xPos, _xoffset;
     [SerializeField] PlayerController _playerController;
+    [SerializeField] GameObject startPanel;
     void Start()
     {
 
@@ -28,10 +29,12 @@ public class InputManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            startPanel.SetActive(false);
             _xPos = Input.mousePosition.x;
         }
        else if (Input.GetMouseButton(0))
         {
+           
             _xoffset = Input.mousePosition.x - _xPos;
         }
 
